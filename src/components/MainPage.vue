@@ -31,17 +31,17 @@
         </div>
         <div class="caracContainer">
           <div class="caracFirstBlock">
-            <Caracteristique label="FOR"/>
-            <Caracteristique label="DEX"/>
-            <Caracteristique label="POU"/>
-            <Caracteristique label="CON"/>
-            <Caracteristique label="APP"/>
+            <Caracteristique :caracteristique=caracteristiques.force />
+            <Caracteristique :caracteristique=caracteristiques.dexterite />
+            <Caracteristique :caracteristique=caracteristiques.pouvoir />
+            <Caracteristique :caracteristique=caracteristiques.constitution />
+            <Caracteristique :caracteristique=caracteristiques.apparence />
           </div>
           <div class="caracSecondBlock">
-            <Caracteristique label="EDU"/>
-            <Caracteristique label="TAI"/>
-            <Caracteristique label="INT"/>
-            <Caracteristique label="MVT" style="padding-top: 30px;"/>
+            <Caracteristique :caracteristique=caracteristiques.education />
+            <Caracteristique :caracteristique=caracteristiques.taille />
+            <Caracteristique :caracteristique=caracteristiques.intelligence />
+            <Caracteristique :caracteristique=caracteristiques.mouvement style="padding-top: 30px;"/>
           </div>
         </div>
       </div>
@@ -167,6 +167,9 @@ export default {
     }
   },
   computed: {
+    caracteristiques() {
+      return this.$store.state.caracteristiques;
+    },
     firstColumnCompetences() {
       return this.$store.state.competences.filter(c => c.columnNb === 1);
     },

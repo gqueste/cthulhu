@@ -1,7 +1,7 @@
 <template>
     <div class="caracteristique">
         <div class="caracLabel">
-            {{ label }}
+            {{ caracteristique.shortLabel }}
         </div>
         <div class="caracBlockContainer">
             <div class="caracBlock">
@@ -23,7 +23,7 @@
 export default {
   name: "Caracteristique",
   props: {
-    label: String
+    caracteristique: Object
   }
 };
 </script>

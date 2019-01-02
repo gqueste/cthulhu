@@ -5,6 +5,44 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
+    caracteristiques: {
+      force: {
+        label: "Force",
+        shortLabel: "FOR"
+      },
+      dexterite: {
+        label: "Dexterité",
+        shortLabel: "DEX"
+      },
+      pouvoir: {
+        label: "Pouvoir",
+        shortLabel: "POU"
+      },
+      constitution: {
+        label: "Constitution",
+        shortLabel: "CON"
+      },
+      apparence: {
+        label: "Apparence",
+        shortLabel: "APP"
+      },
+      education: {
+        label: "Education",
+        shortLabel: "EDU"
+      },
+      taille: {
+        label: "Taille",
+        shortLabel: "TAI"
+      },
+      intelligence: {
+        label: "Intelligence",
+        shortLabel: "INT"
+      },
+      mouvement: {
+        label: "Mouvement",
+        shortLabel: "MVT"
+      }
+    },
     competences: [
       {
         label: "Anthropologie (01 %)",
