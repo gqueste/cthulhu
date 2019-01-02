@@ -72,7 +72,7 @@
         <div class="pointsContainer">
           <span class="pointsLabel">Points de vie</span>
           <span class="pointsStatus">Mourant / Inconscient</span>
-          <span v-for="n in 21" class="points">{{ n - 1 | formatNumber }}</span>
+          <span v-for="n in 21" :key="n" class="points">{{ n - 1 | formatNumber }}</span>
         </div>
       </div>
       <div id="magicPoints">
@@ -83,7 +83,7 @@
         </div>
         <div class="pointsContainer">
           <span class="pointsLabel">Points de magie</span>
-          <span v-for="n in 25" class="points">{{ n - 1 | formatNumber }}</span>
+          <span v-for="n in 25" :key="n" class="points">{{ n - 1 | formatNumber }}</span>
         </div>
       </div>
       <div id="mentalHealth">
@@ -104,14 +104,14 @@
         <div class="pointsContainer">
           <span class="pointsLabel">Santé mentale</span>
           <span class="pointsStatus">Folie</span>
-          <span v-for="n in 100" class="points">{{ n | formatNumber }}</span>
+          <span v-for="n in 100" :key="n" class="points">{{ n | formatNumber }}</span>
         </div>
       </div>
       <div id="chance">
         <div class="pointsContainer">
           <span class="pointsLabel">Chance</span>
           <span class="pointsStatus">Pas de chance</span>
-          <span v-for="n in 100" class="points">{{ n | formatNumber }}</span>
+          <span v-for="n in 100" :key="n" class="points">{{ n | formatNumber }}</span>
         </div>
       </div>
     </div>
@@ -203,182 +203,182 @@
 </template>
 
 <script>
-import Caracteristique from './Caracteristique.vue';
-import Competence from './Competence.vue';
+import Caracteristique from "./Caracteristique.vue";
+import Competence from "./Competence.vue";
 
 export default {
-    name: "MainPage",
-    components: {
-        Caracteristique,
-        Competence
-    },
-    filters: {
-        formatNumber: (value) => {
-            if (value < 10) {
-                return '0' + value;
-            }
-            return value;
-        }
+  name: "MainPage",
+  components: {
+    Caracteristique,
+    Competence
+  },
+  filters: {
+    formatNumber: value => {
+      if (value < 10) {
+        return "0" + value;
+      }
+      return value;
     }
+  }
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-  .body {
-    display: flex;
-    align-items: stretch;
-    flex-direction: column;
-  }
+.body {
+  display: flex;
+  align-items: stretch;
+  flex-direction: column;
+}
 
-  h1 {
-    color: red;
-  }
+h1 {
+  color: red;
+}
 
-  #firstBlock {
-    display: flex;
-    flex-wrap: wrap;
-  }
+#firstBlock {
+  display: flex;
+  flex-wrap: wrap;
+}
 
-  #etatCivil {
-    min-width: 40%;
-    min-height: 200px;
-    display: flex;
-    flex-direction: column;
-  }
+#etatCivil {
+  min-width: 40%;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+}
 
-  .etatCivilContainer {
-    flex-grow: 1;
-    display: flex;
-    justify-content: space-around;
-    flex-direction: column;
-    align-items: stretch;
-  }
+.etatCivilContainer {
+  flex-grow: 1;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: stretch;
+}
 
-  .title {
-    background-color: aliceblue;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+.title {
+  background-color: aliceblue;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-  .splitItems {
-    display: flex;
-    flex-wrap: nowrap;
-  }
+.splitItems {
+  display: flex;
+  flex-wrap: nowrap;
+}
 
-  #caracteristiques {
-    min-width: 30%;
-    display: flex;
-    flex-direction: column;
-  }
+#caracteristiques {
+  min-width: 30%;
+  display: flex;
+  flex-direction: column;
+}
 
-  .caracContainer {
-    flex-grow: 1;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-  }
+.caracContainer {
+  flex-grow: 1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
 
-  .caracFirstBlock {
-    display: flex;
-    flex-direction: column;
-  }
-  .caracSecondBlock {
-    display: flex;
-    flex-direction: column;
-  }
+.caracFirstBlock {
+  display: flex;
+  flex-direction: column;
+}
+.caracSecondBlock {
+  display: flex;
+  flex-direction: column;
+}
 
-  #header {
-    min-width: 30%;
-    display: flex;
-    flex-direction: column;
-  }
+#header {
+  min-width: 30%;
+  display: flex;
+  flex-direction: column;
+}
 
-  .headerDetails {
-    flex-grow: 1;
-    display: flex;
-    justify-content: center;
-  }
+.headerDetails {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+}
 
-  .posterContainer {
-    width: 50%;
-    display: flex;
-    justify-content: center;
-  }
+.posterContainer {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}
 
-  .poster {
-    width: 150px;
-    height: 200px;
-    background-color: red;
-  }
+.poster {
+  width: 150px;
+  height: 200px;
+  background-color: red;
+}
 
-  /**
+/**
       SECOND BLOCK
    */
-  #secondBlock {
-    display: grid;
-    grid-template-columns: 2fr 3fr;
-    grid-template-rows: auto;
-    grid-template-areas:
-            "lifePoints mentalHealth"
-            "magicPoints mentalHealth"
-            "chance chance";
-  }
+#secondBlock {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "lifePoints mentalHealth"
+    "magicPoints mentalHealth"
+    "chance chance";
+}
 
-  #lifePoints {
-    grid-area: lifePoints;
-  }
+#lifePoints {
+  grid-area: lifePoints;
+}
 
-  #magicPoints {
-    grid-area: magicPoints;
-  }
+#magicPoints {
+  grid-area: magicPoints;
+}
 
-  #mentalHealth {
-    grid-area: mentalHealth;
-  }
+#mentalHealth {
+  grid-area: mentalHealth;
+}
 
-  #chance {
-    grid-area: chance;
-  }
+#chance {
+  grid-area: chance;
+}
 
-  .pointsDetails {
-    display: flex;
-    justify-content: space-around;
-  }
+.pointsDetails {
+  display: flex;
+  justify-content: space-around;
+}
 
-  .pointsLabel {
-    font-weight: bold;
-    margin-right: 1px;
-  }
+.pointsLabel {
+  font-weight: bold;
+  margin-right: 1px;
+}
 
-  .pointsStatus {
-    font-style: italic;
-    margin-left: 1px;
-    margin-right: 1px;
-  }
+.pointsStatus {
+  font-style: italic;
+  margin-left: 1px;
+  margin-right: 1px;
+}
 
-  .pointsContainer {
-    display: flex;
-    flex-wrap: wrap;
-  }
+.pointsContainer {
+  display: flex;
+  flex-wrap: wrap;
+}
 
-  .points {
-    margin-left: 1px;
-    margin-right: 1px;
-  }
+.points {
+  margin-left: 1px;
+  margin-right: 1px;
+}
 
-  .competencesHeader {
-    display: flex;
-    justify-content: center;
-  }
+.competencesHeader {
+  display: flex;
+  justify-content: center;
+}
 
-  .competences {
-    display: flex;
-  }
+.competences {
+  display: flex;
+}
 
-  .competencesColumn {
-    flex-grow: 1;
-  }
+.competencesColumn {
+  flex-grow: 1;
+}
 </style>
