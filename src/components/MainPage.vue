@@ -121,79 +121,25 @@
       </div>
       <div class="competences">
         <div class="competencesColumn">
-          <Competence label="Anthropologie (01 %)"/>
-          <Competence label="Archéologie (01 %)" />
-          <Competence label="Arts et métiers (05 %)" />
-          <Competence label="..." />
-          <Competence label="..." />
-          <Competence label="..." />
-          <Competence label="Baratin (05 %)" />
-          <Competence label="Bibliothèque (20 %)" />
-          <Competence label="Charme (15 %)" />
-          <Competence label="Combat à distance" :isCategory=true />
-          <Competence label="(armes de poing) (20 %)" />
-          <Competence label="(fusils) (25 %)" />
-          <Competence label="..." />
-          <Competence label="..." />
-          <Competence label="Combat rapproché" :isCategory=true />
-          <Competence label="(corps à corps) (25 %)" />
-          <Competence label="..." />
-          <Competence label="..." />
-          <Competence label="Comptabilité (05 %)" />
-          <Competence label="Conduite (20 %)" />
-          <Competence label="Conduite engin lourd (01 %)" />
-          <Competence label="Crédit (00 %)" />
-          <Competence label="Crochetage (01 %)" />
+          <Competence
+            v-for="(c, index) in firstColumnCompetences"
+            :key=index
+            :competence=c
+          />
         </div>
         <div class="competencesColumn">
-          <Competence label="Discrétion (20 %)" />
-          <Competence label="Droit (05 %)" />
-          <Competence label="Ecouter (20 %)" />
-          <Competence label="Electricité (10 %)" />
-          <Competence label="Equitation (05 %)" />
-          <Competence label="Esquive (DEX/2)" />
-          <Competence label="Estimation (05 %)" />
-          <Competence label="Grimper (20 %)" />
-          <Competence label="Histoire (05 %)" />
-          <Competence label="Imposture (05 %)" />
-          <Competence label="Intimidation (15 %)" />
-          <Competence label="Lancer (20 %)" />
-          <Competence label="Langue maternelle (EDU)" />
-          <Competence label="Langues (01 %)" :isCategory=true />
-          <Competence label="..." />
-          <Competence label="..." />
-          <Competence label="..." />
-          <Competence label="Mécanique (10 %)" />
-          <Competence label="Médecine (01 %)" />
-          <Competence label="Mythe de Cthulhu (00 %)" />
-          <Competence label="Nager (20 %)" />
-          <Competence label="Naturalisme (10 %)" />
-          <Competence label="Occultisme (05%)" />
+          <Competence
+            v-for="(c, index) in secondColumnCompetences"
+            :key=index
+            :competence=c
+          />
         </div>
         <div class="competencesColumn">
-          <Competence label="Orientation (10 %)" />
-          <Competence label="Persuasion (10 %)" />
-          <Competence label="Pickpocket (10 %)" />
-          <Competence label="Pilotage (01 %)" />
-          <Competence label="..." />
-          <Competence label="Pister (10 %)" />
-          <Competence label="Plongée (01 %)" />
-          <Competence label="Premiers soins (30 %)" />
-          <Competence label="Psychanalyse (01 %)" />
-          <Competence label="Psychologie (10 %)" />
-          <Competence label="Sauter (20 %)" />
-          <Competence label="Sciences (01 %)" />
-          <Competence label="..." />
-          <Competence label="..." />
-          <Competence label="..." />
-          <Competence label="Survie (10 %)" />
-          <Competence label="..." />
-          <Competence label="Trouver Objet Caché (25 %)" />
-          <Competence label="..." />
-          <Competence label="..." />
-          <Competence label="..." />
-          <Competence label="..." />
-          <Competence label="..." />
+          <Competence
+            v-for="(c, index) in thirdColumnCompetences"
+            :key=index
+            :competence=c
+          />
         </div>
       </div>
     </div>
@@ -218,6 +164,17 @@ export default {
         return "0" + value;
       }
       return value;
+    }
+  },
+  computed: {
+    firstColumnCompetences() {
+      return this.$store.state.competences.filter(c => c.columnNb === 1);
+    },
+    secondColumnCompetences() {
+      return this.$store.state.competences.filter(c => c.columnNb === 2);
+    },
+    thirdColumnCompetences() {
+      return this.$store.state.competences.filter(c => c.columnNb === 3);
     }
   }
 };

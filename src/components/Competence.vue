@@ -1,9 +1,9 @@
 <template>
     <div class="competence">
-        <div v-if="!isCategory" class="round"></div>
-        <div class="competenceLabel">{{ label }}</div>
-        <div v-if="!isCategory" class="percentage">---- %</div>
-        <div v-if="!isCategory" class="competenceBlock">
+        <div v-if="!competence.isCategory" class="round"></div>
+        <div class="competenceLabel">{{ competence.label }}</div>
+        <div v-if="!competence.isCategory" class="percentage">---- %</div>
+        <div v-if="!competence.isCategory" class="competenceBlock">
             <div class="competenceSquare"></div>
             <div class="competenceSquare"></div>
         </div>
@@ -14,11 +14,7 @@
 export default {
   name: "Competence",
   props: {
-    label: String,
-    isCategory: {
-      type: Boolean,
-      default: false
-    }
+    competence: Object
   }
 };
 </script>
