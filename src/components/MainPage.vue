@@ -31,170 +31,17 @@
         </div>
         <div class="caracContainer">
           <div class="caracFirstBlock">
-            <div class="caracteristique">
-              <div class="caracLabel">
-                FOR
-              </div>
-              <div class="caracBlockContainer">
-                <div class="caracBlock">
-                  <div class="bigCaracBlock caracBlockItem">
-                    1
-                  </div>
-                  <div class="upperCaracBlock caracBlockItem">
-                    2
-                  </div>
-                  <div class="underCaracBlock caracBlockItem">
-                    3
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="caracteristique">
-              <div class="caracLabel">
-                DEX
-              </div>
-              <div class="caracBlockContainer">
-                <div class="caracBlock">
-                  <div class="bigCaracBlock caracBlockItem">
-                    1
-                  </div>
-                  <div class="upperCaracBlock caracBlockItem">
-                    2
-                  </div>
-                  <div class="underCaracBlock caracBlockItem">
-                    3
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="caracteristique">
-              <div class="caracLabel">
-                POU
-              </div>
-              <div class="caracBlockContainer">
-                <div class="caracBlock">
-                  <div class="bigCaracBlock caracBlockItem">
-                    1
-                  </div>
-                  <div class="upperCaracBlock caracBlockItem">
-                    2
-                  </div>
-                  <div class="underCaracBlock caracBlockItem">
-                    3
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="caracteristique">
-              <div class="caracLabel">
-                CON
-              </div>
-              <div class="caracBlockContainer">
-                <div class="caracBlock">
-                  <div class="bigCaracBlock caracBlockItem">
-                    1
-                  </div>
-                  <div class="upperCaracBlock caracBlockItem">
-                    2
-                  </div>
-                  <div class="underCaracBlock caracBlockItem">
-                    3
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="caracteristique">
-              <div class="caracLabel">
-                APP
-              </div>
-              <div class="caracBlockContainer">
-                <div class="caracBlock">
-                  <div class="bigCaracBlock caracBlockItem">
-                    1
-                  </div>
-                  <div class="upperCaracBlock caracBlockItem">
-                    2
-                  </div>
-                  <div class="underCaracBlock caracBlockItem">
-                    3
-                  </div>
-                </div>
-              </div>
-            </div>
+            <Caracteristique label="FOR"/>
+            <Caracteristique label="DEX"/>
+            <Caracteristique label="POU"/>
+            <Caracteristique label="CON"/>
+            <Caracteristique label="APP"/>
           </div>
           <div class="caracSecondBlock">
-            <div class="caracteristique">
-              <div class="caracLabel">
-                EDU
-              </div>
-              <div class="caracBlockContainer">
-                <div class="caracBlock">
-                  <div class="bigCaracBlock caracBlockItem">
-                    1
-                  </div>
-                  <div class="upperCaracBlock caracBlockItem">
-                    2
-                  </div>
-                  <div class="underCaracBlock caracBlockItem">
-                    3
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="caracteristique">
-              <div class="caracLabel">
-                TAI
-              </div>
-              <div class="caracBlockContainer">
-                <div class="caracBlock">
-                  <div class="bigCaracBlock caracBlockItem">
-                    1
-                  </div>
-                  <div class="upperCaracBlock caracBlockItem">
-                    2
-                  </div>
-                  <div class="underCaracBlock caracBlockItem">
-                    3
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="caracteristique">
-              <div class="caracLabel">
-                INT
-              </div>
-              <div class="caracBlockContainer">
-                <div class="caracBlock">
-                  <div class="bigCaracBlock caracBlockItem">
-                    1
-                  </div>
-                  <div class="upperCaracBlock caracBlockItem">
-                    2
-                  </div>
-                  <div class="underCaracBlock caracBlockItem">
-                    3
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="caracteristique" style="padding-top: 30px;">
-              <div class="caracLabel">
-                MVT
-              </div>
-              <div class="caracBlockContainer">
-                <div class="caracBlock">
-                  <div class="bigCaracBlock caracBlockItem">
-                    1
-                  </div>
-                  <div class="upperCaracBlock caracBlockItem">
-                    2
-                  </div>
-                  <div class="underCaracBlock caracBlockItem">
-                    3
-                  </div>
-                </div>
-              </div>
-            </div>
+            <Caracteristique label="EDU"/>
+            <Caracteristique label="TAI"/>
+            <Caracteristique label="INT"/>
+            <Caracteristique label="MVT" style="padding-top: 30px;"/>
           </div>
         </div>
       </div>
@@ -225,27 +72,7 @@
         <div class="pointsContainer">
           <span class="pointsLabel">Points de vie</span>
           <span class="pointsStatus">Mourant / Inconscient</span>
-          <span class="points">00</span>
-          <span class="points">01</span>
-          <span class="points">02</span>
-          <span class="points">03</span>
-          <span class="points">04</span>
-          <span class="points">05</span>
-          <span class="points">06</span>
-          <span class="points">07</span>
-          <span class="points">08</span>
-          <span class="points">09</span>
-          <span class="points">10</span>
-          <span class="points">11</span>
-          <span class="points">12</span>
-          <span class="points">13</span>
-          <span class="points">14</span>
-          <span class="points">15</span>
-          <span class="points">16</span>
-          <span class="points">17</span>
-          <span class="points">18</span>
-          <span class="points">19</span>
-          <span class="points">20</span>
+          <span v-for="n in 21" class="points">{{ n - 1 | formatNumber }}</span>
         </div>
       </div>
       <div id="magicPoints">
@@ -256,31 +83,7 @@
         </div>
         <div class="pointsContainer">
           <span class="pointsLabel">Points de magie</span>
-          <span class="points">00</span>
-          <span class="points">01</span>
-          <span class="points">02</span>
-          <span class="points">03</span>
-          <span class="points">04</span>
-          <span class="points">05</span>
-          <span class="points">06</span>
-          <span class="points">07</span>
-          <span class="points">08</span>
-          <span class="points">09</span>
-          <span class="points">10</span>
-          <span class="points">11</span>
-          <span class="points">12</span>
-          <span class="points">13</span>
-          <span class="points">14</span>
-          <span class="points">15</span>
-          <span class="points">16</span>
-          <span class="points">17</span>
-          <span class="points">18</span>
-          <span class="points">19</span>
-          <span class="points">20</span>
-          <span class="points">21</span>
-          <span class="points">22</span>
-          <span class="points">23</span>
-          <span class="points">24</span>
+          <span v-for="n in 25" class="points">{{ n - 1 | formatNumber }}</span>
         </div>
       </div>
       <div id="mentalHealth">
@@ -301,212 +104,14 @@
         <div class="pointsContainer">
           <span class="pointsLabel">Santé mentale</span>
           <span class="pointsStatus">Folie</span>
-          <span class="points">01</span>
-          <span class="points">02</span>
-          <span class="points">03</span>
-          <span class="points">04</span>
-          <span class="points">05</span>
-          <span class="points">06</span>
-          <span class="points">07</span>
-          <span class="points">08</span>
-          <span class="points">09</span>
-          <span class="points">10</span>
-          <span class="points">11</span>
-          <span class="points">12</span>
-          <span class="points">13</span>
-          <span class="points">14</span>
-          <span class="points">15</span>
-          <span class="points">16</span>
-          <span class="points">17</span>
-          <span class="points">18</span>
-          <span class="points">19</span>
-          <span class="points">20</span>
-          <span class="points">21</span>
-          <span class="points">22</span>
-          <span class="points">23</span>
-          <span class="points">24</span>
-          <span class="points">25</span>
-          <span class="points">26</span>
-          <span class="points">27</span>
-          <span class="points">28</span>
-          <span class="points">29</span>
-          <span class="points">30</span>
-          <span class="points">31</span>
-          <span class="points">32</span>
-          <span class="points">33</span>
-          <span class="points">34</span>
-          <span class="points">35</span>
-          <span class="points">36</span>
-          <span class="points">37</span>
-          <span class="points">38</span>
-          <span class="points">39</span>
-          <span class="points">40</span>
-          <span class="points">41</span>
-          <span class="points">42</span>
-          <span class="points">43</span>
-          <span class="points">44</span>
-          <span class="points">45</span>
-          <span class="points">46</span>
-          <span class="points">47</span>
-          <span class="points">48</span>
-          <span class="points">49</span>
-          <span class="points">50</span>
-          <span class="points">51</span>
-          <span class="points">52</span>
-          <span class="points">53</span>
-          <span class="points">54</span>
-          <span class="points">55</span>
-          <span class="points">56</span>
-          <span class="points">57</span>
-          <span class="points">58</span>
-          <span class="points">59</span>
-          <span class="points">60</span>
-          <span class="points">61</span>
-          <span class="points">62</span>
-          <span class="points">63</span>
-          <span class="points">64</span>
-          <span class="points">65</span>
-          <span class="points">66</span>
-          <span class="points">67</span>
-          <span class="points">68</span>
-          <span class="points">69</span>
-          <span class="points">70</span>
-          <span class="points">71</span>
-          <span class="points">72</span>
-          <span class="points">73</span>
-          <span class="points">74</span>
-          <span class="points">75</span>
-          <span class="points">76</span>
-          <span class="points">77</span>
-          <span class="points">78</span>
-          <span class="points">79</span>
-          <span class="points">80</span>
-          <span class="points">81</span>
-          <span class="points">82</span>
-          <span class="points">83</span>
-          <span class="points">84</span>
-          <span class="points">85</span>
-          <span class="points">86</span>
-          <span class="points">87</span>
-          <span class="points">88</span>
-          <span class="points">89</span>
-          <span class="points">90</span>
-          <span class="points">91</span>
-          <span class="points">92</span>
-          <span class="points">93</span>
-          <span class="points">94</span>
-          <span class="points">95</span>
-          <span class="points">96</span>
-          <span class="points">97</span>
-          <span class="points">98</span>
-          <span class="points">99</span>
-          <span class="points">100</span>
+          <span v-for="n in 100" class="points">{{ n | formatNumber }}</span>
         </div>
       </div>
       <div id="chance">
         <div class="pointsContainer">
           <span class="pointsLabel">Chance</span>
           <span class="pointsStatus">Pas de chance</span>
-          <span class="points">01</span>
-          <span class="points">02</span>
-          <span class="points">03</span>
-          <span class="points">04</span>
-          <span class="points">05</span>
-          <span class="points">06</span>
-          <span class="points">07</span>
-          <span class="points">08</span>
-          <span class="points">09</span>
-          <span class="points">10</span>
-          <span class="points">11</span>
-          <span class="points">12</span>
-          <span class="points">13</span>
-          <span class="points">14</span>
-          <span class="points">15</span>
-          <span class="points">16</span>
-          <span class="points">17</span>
-          <span class="points">18</span>
-          <span class="points">19</span>
-          <span class="points">20</span>
-          <span class="points">21</span>
-          <span class="points">22</span>
-          <span class="points">23</span>
-          <span class="points">24</span>
-          <span class="points">25</span>
-          <span class="points">26</span>
-          <span class="points">27</span>
-          <span class="points">28</span>
-          <span class="points">29</span>
-          <span class="points">30</span>
-          <span class="points">31</span>
-          <span class="points">32</span>
-          <span class="points">33</span>
-          <span class="points">34</span>
-          <span class="points">35</span>
-          <span class="points">36</span>
-          <span class="points">37</span>
-          <span class="points">38</span>
-          <span class="points">39</span>
-          <span class="points">40</span>
-          <span class="points">41</span>
-          <span class="points">42</span>
-          <span class="points">43</span>
-          <span class="points">44</span>
-          <span class="points">45</span>
-          <span class="points">46</span>
-          <span class="points">47</span>
-          <span class="points">48</span>
-          <span class="points">49</span>
-          <span class="points">50</span>
-          <span class="points">51</span>
-          <span class="points">52</span>
-          <span class="points">53</span>
-          <span class="points">54</span>
-          <span class="points">55</span>
-          <span class="points">56</span>
-          <span class="points">57</span>
-          <span class="points">58</span>
-          <span class="points">59</span>
-          <span class="points">60</span>
-          <span class="points">61</span>
-          <span class="points">62</span>
-          <span class="points">63</span>
-          <span class="points">64</span>
-          <span class="points">65</span>
-          <span class="points">66</span>
-          <span class="points">67</span>
-          <span class="points">68</span>
-          <span class="points">69</span>
-          <span class="points">70</span>
-          <span class="points">71</span>
-          <span class="points">72</span>
-          <span class="points">73</span>
-          <span class="points">74</span>
-          <span class="points">75</span>
-          <span class="points">76</span>
-          <span class="points">77</span>
-          <span class="points">78</span>
-          <span class="points">79</span>
-          <span class="points">80</span>
-          <span class="points">81</span>
-          <span class="points">82</span>
-          <span class="points">83</span>
-          <span class="points">84</span>
-          <span class="points">85</span>
-          <span class="points">86</span>
-          <span class="points">87</span>
-          <span class="points">88</span>
-          <span class="points">89</span>
-          <span class="points">90</span>
-          <span class="points">91</span>
-          <span class="points">92</span>
-          <span class="points">93</span>
-          <span class="points">94</span>
-          <span class="points">95</span>
-          <span class="points">96</span>
-          <span class="points">97</span>
-          <span class="points">98</span>
-          <span class="points">99</span>
-          <span class="points">100</span>
+          <span v-for="n in 100" class="points">{{ n | formatNumber }}</span>
         </div>
       </div>
     </div>
@@ -516,619 +121,79 @@
       </div>
       <div class="competences">
         <div class="competencesColumn">
-          <div class="competence">
-            <div class="round"></div>
-            <div class="competenceLabel">Anthropologie (01 %)</div>
-            <div class="percentage">---- %</div>
-            <div class="competenceBlock">
-              <div class="competenceSquare"></div>
-              <div class="competenceSquare"></div>
-            </div>
-          </div>
-          <div class="competence">
-            <div class="round"></div>
-            <div class="competenceLabel">Archéologie (01 %)</div>
-            <div class="percentage">---- %</div>
-            <div class="competenceBlock">
-              <div class="competenceSquare"></div>
-              <div class="competenceSquare"></div>
-            </div>
-          </div>
-          <div class="competence">
-            <div class="round"></div>
-            <div class="competenceLabel">Arts et métiers (05 %)</div>
-            <div class="percentage">---- %</div>
-            <div class="competenceBlock">
-              <div class="competenceSquare"></div>
-              <div class="competenceSquare"></div>
-            </div>
-          </div>
-          <div class="competence">
-            <div class="round"></div>
-            <div class="competenceLabel">...</div>
-            <div class="percentage">---- %</div>
-            <div class="competenceBlock">
-              <div class="competenceSquare"></div>
-              <div class="competenceSquare"></div>
-            </div>
-          </div>
-          <div class="competence">
-            <div class="round"></div>
-            <div class="competenceLabel">...</div>
-            <div class="percentage">---- %</div>
-            <div class="competenceBlock">
-              <div class="competenceSquare"></div>
-              <div class="competenceSquare"></div>
-            </div>
-          </div>
-          <div class="competence">
-            <div class="round"></div>
-            <div class="competenceLabel">...</div>
-            <div class="percentage">---- %</div>
-            <div class="competenceBlock">
-              <div class="competenceSquare"></div>
-              <div class="competenceSquare"></div>
-            </div>
-          </div>
-          <div class="competence">
-            <div class="round"></div>
-            <div class="competenceLabel">Baratin (05 %)</div>
-            <div class="percentage">---- %</div>
-            <div class="competenceBlock">
-              <div class="competenceSquare"></div>
-              <div class="competenceSquare"></div>
-            </div>
-          </div>
-          <div class="competence">
-            <div class="round"></div>
-            <div class="competenceLabel">Bibliothèque (20 %)</div>
-            <div class="percentage">---- %</div>
-            <div class="competenceBlock">
-              <div class="competenceSquare"></div>
-              <div class="competenceSquare"></div>
-            </div>
-          </div>
-          <div class="competence">
-            <div class="round"></div>
-            <div class="competenceLabel">Charme (15 %)</div>
-            <div class="percentage">---- %</div>
-            <div class="competenceBlock">
-              <div class="competenceSquare"></div>
-              <div class="competenceSquare"></div>
-            </div>
-          </div>
-          <div class="competence">
-            <div class="competenceLabel">Combat à distance</div>
-          </div>
-          <div class="competence">
-            <div class="round"></div>
-            <div class="competenceLabel">(armes de poing) (20 %)</div>
-            <div class="percentage">---- %</div>
-            <div class="competenceBlock">
-              <div class="competenceSquare"></div>
-              <div class="competenceSquare"></div>
-            </div>
-          </div>
-          <div class="competence">
-            <div class="round"></div>
-            <div class="competenceLabel">(fusils) (25 %)</div>
-            <div class="percentage">---- %</div>
-            <div class="competenceBlock">
-              <div class="competenceSquare"></div>
-              <div class="competenceSquare"></div>
-            </div>
-          </div>
-          <div class="competence">
-            <div class="round"></div>
-            <div class="competenceLabel">...</div>
-            <div class="percentage">---- %</div>
-            <div class="competenceBlock">
-              <div class="competenceSquare"></div>
-              <div class="competenceSquare"></div>
-            </div>
-          </div>
-          <div class="competence">
-            <div class="round"></div>
-            <div class="competenceLabel">...</div>
-            <div class="percentage">---- %</div>
-            <div class="competenceBlock">
-              <div class="competenceSquare"></div>
-              <div class="competenceSquare"></div>
-            </div>
-          </div>
-          <div class="competence">
-            <div class="competenceLabel">Combat rapproché</div>
-          </div>
-          <div class="competence">
-            <div class="round"></div>
-            <div class="competenceLabel">(corps à corps) (25 %)</div>
-            <div class="percentage">---- %</div>
-            <div class="competenceBlock">
-              <div class="competenceSquare"></div>
-              <div class="competenceSquare"></div>
-            </div>
-          </div>
-          <div class="competence">
-            <div class="round"></div>
-            <div class="competenceLabel">...</div>
-            <div class="percentage">---- %</div>
-            <div class="competenceBlock">
-              <div class="competenceSquare"></div>
-              <div class="competenceSquare"></div>
-            </div>
-          </div>
-          <div class="competence">
-            <div class="round"></div>
-            <div class="competenceLabel">...</div>
-            <div class="percentage">---- %</div>
-            <div class="competenceBlock">
-              <div class="competenceSquare"></div>
-              <div class="competenceSquare"></div>
-            </div>
-          </div>
-          <div class="competence">
-            <div class="round"></div>
-            <div class="competenceLabel">Comptabilité (05 %)</div>
-            <div class="percentage">---- %</div>
-            <div class="competenceBlock">
-              <div class="competenceSquare"></div>
-              <div class="competenceSquare"></div>
-            </div>
-          </div>
-          <div class="competence">
-            <div class="round"></div>
-            <div class="competenceLabel">Conduite (20 %)</div>
-            <div class="percentage">---- %</div>
-            <div class="competenceBlock">
-              <div class="competenceSquare"></div>
-              <div class="competenceSquare"></div>
-            </div>
-          </div>
-          <div class="competence">
-            <div class="round"></div>
-            <div class="competenceLabel">Conduite engin lourd (01 %)</div>
-            <div class="percentage">---- %</div>
-            <div class="competenceBlock">
-              <div class="competenceSquare"></div>
-              <div class="competenceSquare"></div>
-            </div>
-          </div>
-          <div class="competence">
-            <div class="round">N</div>
-            <div class="competenceLabel">Crédit (00 %)</div>
-            <div class="percentage">---- %</div>
-            <div class="competenceBlock">
-              <div class="competenceSquare"></div>
-              <div class="competenceSquare"></div>
-            </div>
-          </div>
-          <div class="competence">
-            <div class="round"></div>
-            <div class="competenceLabel">Crochetage (01 %)</div>
-            <div class="percentage">---- %</div>
-            <div class="competenceBlock">
-              <div class="competenceSquare"></div>
-              <div class="competenceSquare"></div>
-            </div>
-          </div>
+          <Competence label="Anthropologie (01 %)"/>
+          <Competence label="Archéologie (01 %)" />
+          <Competence label="Arts et métiers (05 %)" />
+          <Competence label="..." />
+          <Competence label="..." />
+          <Competence label="..." />
+          <Competence label="Baratin (05 %)" />
+          <Competence label="Bibliothèque (20 %)" />
+          <Competence label="Charme (15 %)" />
+          <Competence label="Combat à distance" :isCategory=true />
+          <Competence label="(armes de poing) (20 %)" />
+          <Competence label="(fusils) (25 %)" />
+          <Competence label="..." />
+          <Competence label="..." />
+          <Competence label="Combat rapproché" :isCategory=true />
+          <Competence label="(corps à corps) (25 %)" />
+          <Competence label="..." />
+          <Competence label="..." />
+          <Competence label="Comptabilité (05 %)" />
+          <Competence label="Conduite (20 %)" />
+          <Competence label="Conduite engin lourd (01 %)" />
+          <Competence label="Crédit (00 %)" />
+          <Competence label="Crochetage (01 %)" />
         </div>
         <div class="competencesColumn">
-          <div class="competence">
-            <div class="round"></div>
-            <div class="competenceLabel">Discrétion (20 %)</div>
-            <div class="percentage">---- %</div>
-            <div class="competenceBlock">
-              <div class="competenceSquare"></div>
-              <div class="competenceSquare"></div>
-            </div>
-          </div>
-          <div class="competence">
-            <div class="round"></div>
-            <div class="competenceLabel">Droit (05 %)</div>
-            <div class="percentage">---- %</div>
-            <div class="competenceBlock">
-              <div class="competenceSquare"></div>
-              <div class="competenceSquare"></div>
-            </div>
-          </div>
-          <div class="competence">
-            <div class="round"></div>
-            <div class="competenceLabel">Ecouter (20 %)</div>
-            <div class="percentage">---- %</div>
-            <div class="competenceBlock">
-              <div class="competenceSquare"></div>
-              <div class="competenceSquare"></div>
-            </div>
-          </div>
-          <div class="competence">
-            <div class="round"></div>
-            <div class="competenceLabel">Electricité (10 %)</div>
-            <div class="percentage">---- %</div>
-            <div class="competenceBlock">
-              <div class="competenceSquare"></div>
-              <div class="competenceSquare"></div>
-            </div>
-          </div>
-          <div class="competence">
-            <div class="round"></div>
-            <div class="competenceLabel">Equitation (05 %)</div>
-            <div class="percentage">---- %</div>
-            <div class="competenceBlock">
-              <div class="competenceSquare"></div>
-              <div class="competenceSquare"></div>
-            </div>
-          </div>
-          <div class="competence">
-            <div class="round"></div>
-            <div class="competenceLabel">Esquive (DEX/2)</div>
-            <div class="percentage">---- %</div>
-            <div class="competenceBlock">
-              <div class="competenceSquare"></div>
-              <div class="competenceSquare"></div>
-            </div>
-          </div>
-          <div class="competence">
-            <div class="round"></div>
-            <div class="competenceLabel">Estimation (05 %)</div>
-            <div class="percentage">---- %</div>
-            <div class="competenceBlock">
-              <div class="competenceSquare"></div>
-              <div class="competenceSquare"></div>
-            </div>
-          </div>
-          <div class="competence">
-            <div class="round"></div>
-            <div class="competenceLabel">Grimper (20 %)</div>
-            <div class="percentage">---- %</div>
-            <div class="competenceBlock">
-              <div class="competenceSquare"></div>
-              <div class="competenceSquare"></div>
-            </div>
-          </div>
-          <div class="competence">
-            <div class="round"></div>
-            <div class="competenceLabel">Histoire (05 %)</div>
-            <div class="percentage">---- %</div>
-            <div class="competenceBlock">
-              <div class="competenceSquare"></div>
-              <div class="competenceSquare"></div>
-            </div>
-          </div>
-          <div class="competence">
-            <div class="round"></div>
-            <div class="competenceLabel">Imposture (05 %)</div>
-            <div class="percentage">---- %</div>
-            <div class="competenceBlock">
-              <div class="competenceSquare"></div>
-              <div class="competenceSquare"></div>
-            </div>
-          </div>
-          <div class="competence">
-            <div class="round"></div>
-            <div class="competenceLabel">Intimidation (15 %)</div>
-            <div class="percentage">---- %</div>
-            <div class="competenceBlock">
-              <div class="competenceSquare"></div>
-              <div class="competenceSquare"></div>
-            </div>
-          </div>
-          <div class="competence">
-            <div class="round"></div>
-            <div class="competenceLabel">Lancer (20 %)</div>
-            <div class="percentage">---- %</div>
-            <div class="competenceBlock">
-              <div class="competenceSquare"></div>
-              <div class="competenceSquare"></div>
-            </div>
-          </div>
-          <div class="competence">
-            <div class="round"></div>
-            <div class="competenceLabel">Langue maternelle (EDU)</div>
-            <div class="percentage">---- %</div>
-            <div class="competenceBlock">
-              <div class="competenceSquare"></div>
-              <div class="competenceSquare"></div>
-            </div>
-          </div>
-          <div class="competence">
-            <div class="round">N</div>
-            <div class="competenceLabel">Langues (01 %)</div>
-            <div class="percentage">---- %</div>
-            <div class="competenceBlock">
-              <div class="competenceSquare"></div>
-              <div class="competenceSquare"></div>
-            </div>
-          </div>
-          <div class="competence">
-            <div class="round"></div>
-            <div class="competenceLabel">...</div>
-            <div class="percentage">---- %</div>
-            <div class="competenceBlock">
-              <div class="competenceSquare"></div>
-              <div class="competenceSquare"></div>
-            </div>
-          </div>
-          <div class="competence">
-            <div class="round"></div>
-            <div class="competenceLabel">...</div>
-            <div class="percentage">---- %</div>
-            <div class="competenceBlock">
-              <div class="competenceSquare"></div>
-              <div class="competenceSquare"></div>
-            </div>
-          </div>
-          <div class="competence">
-            <div class="round"></div>
-            <div class="competenceLabel">...</div>
-            <div class="percentage">---- %</div>
-            <div class="competenceBlock">
-              <div class="competenceSquare"></div>
-              <div class="competenceSquare"></div>
-            </div>
-          </div>
-          <div class="competence">
-            <div class="round"></div>
-            <div class="competenceLabel">Mécanique (10 %)</div>
-            <div class="percentage">---- %</div>
-            <div class="competenceBlock">
-              <div class="competenceSquare"></div>
-              <div class="competenceSquare"></div>
-            </div>
-          </div>
-          <div class="competence">
-            <div class="round"></div>
-            <div class="competenceLabel">Médecine (01 %)</div>
-            <div class="percentage">---- %</div>
-            <div class="competenceBlock">
-              <div class="competenceSquare"></div>
-              <div class="competenceSquare"></div>
-            </div>
-          </div>
-          <div class="competence">
-            <div class="round">N</div>
-            <div class="competenceLabel">Mythe de Cthulhu (00 %)</div>
-            <div class="percentage">---- %</div>
-            <div class="competenceBlock">
-              <div class="competenceSquare"></div>
-              <div class="competenceSquare"></div>
-            </div>
-          </div>
-          <div class="competence">
-            <div class="round"></div>
-            <div class="competenceLabel">Nager (20 %)</div>
-            <div class="percentage">---- %</div>
-            <div class="competenceBlock">
-              <div class="competenceSquare"></div>
-              <div class="competenceSquare"></div>
-            </div>
-          </div>
-          <div class="competence">
-            <div class="round"></div>
-            <div class="competenceLabel">Naturalisme (10 %)</div>
-            <div class="percentage">---- %</div>
-            <div class="competenceBlock">
-              <div class="competenceSquare"></div>
-              <div class="competenceSquare"></div>
-            </div>
-          </div>
-          <div class="competence">
-            <div class="round"></div>
-            <div class="competenceLabel">Occultisme (05%)</div>
-            <div class="percentage">---- %</div>
-            <div class="competenceBlock">
-              <div class="competenceSquare"></div>
-              <div class="competenceSquare"></div>
-            </div>
-          </div>
+          <Competence label="Discrétion (20 %)" />
+          <Competence label="Droit (05 %)" />
+          <Competence label="Ecouter (20 %)" />
+          <Competence label="Electricité (10 %)" />
+          <Competence label="Equitation (05 %)" />
+          <Competence label="Esquive (DEX/2)" />
+          <Competence label="Estimation (05 %)" />
+          <Competence label="Grimper (20 %)" />
+          <Competence label="Histoire (05 %)" />
+          <Competence label="Imposture (05 %)" />
+          <Competence label="Intimidation (15 %)" />
+          <Competence label="Lancer (20 %)" />
+          <Competence label="Langue maternelle (EDU)" />
+          <Competence label="Langues (01 %)" :isCategory=true />
+          <Competence label="..." />
+          <Competence label="..." />
+          <Competence label="..." />
+          <Competence label="Mécanique (10 %)" />
+          <Competence label="Médecine (01 %)" />
+          <Competence label="Mythe de Cthulhu (00 %)" />
+          <Competence label="Nager (20 %)" />
+          <Competence label="Naturalisme (10 %)" />
+          <Competence label="Occultisme (05%)" />
         </div>
         <div class="competencesColumn">
-          <div class="competence">
-            <div class="round"></div>
-            <div class="competenceLabel">Orientation (10 %)</div>
-            <div class="percentage">---- %</div>
-            <div class="competenceBlock">
-              <div class="competenceSquare"></div>
-              <div class="competenceSquare"></div>
-            </div>
-          </div>
-          <div class="competence">
-            <div class="round"></div>
-            <div class="competenceLabel">Persuasion (10 %)</div>
-            <div class="percentage">---- %</div>
-            <div class="competenceBlock">
-              <div class="competenceSquare"></div>
-              <div class="competenceSquare"></div>
-            </div>
-          </div>
-          <div class="competence">
-            <div class="round"></div>
-            <div class="competenceLabel">Pickpocket (10 %)</div>
-            <div class="percentage">---- %</div>
-            <div class="competenceBlock">
-              <div class="competenceSquare"></div>
-              <div class="competenceSquare"></div>
-            </div>
-          </div>
-          <div class="competence">
-            <div class="round"></div>
-            <div class="competenceLabel">Pilotage (01 %)</div>
-            <div class="percentage">---- %</div>
-            <div class="competenceBlock">
-              <div class="competenceSquare"></div>
-              <div class="competenceSquare"></div>
-            </div>
-          </div>
-          <div class="competence">
-            <div class="round"></div>
-            <div class="competenceLabel">...</div>
-            <div class="percentage">---- %</div>
-            <div class="competenceBlock">
-              <div class="competenceSquare"></div>
-              <div class="competenceSquare"></div>
-            </div>
-          </div>
-          <div class="competence">
-            <div class="round"></div>
-            <div class="competenceLabel">Pister (10 %)</div>
-            <div class="percentage">---- %</div>
-            <div class="competenceBlock">
-              <div class="competenceSquare"></div>
-              <div class="competenceSquare"></div>
-            </div>
-          </div>
-          <div class="competence">
-            <div class="round"></div>
-            <div class="competenceLabel">Plongée (01 %)</div>
-            <div class="percentage">---- %</div>
-            <div class="competenceBlock">
-              <div class="competenceSquare"></div>
-              <div class="competenceSquare"></div>
-            </div>
-          </div>
-          <div class="competence">
-            <div class="round"></div>
-            <div class="competenceLabel">Premiers soins (30 %)</div>
-            <div class="percentage">---- %</div>
-            <div class="competenceBlock">
-              <div class="competenceSquare"></div>
-              <div class="competenceSquare"></div>
-            </div>
-          </div>
-          <div class="competence">
-            <div class="round"></div>
-            <div class="competenceLabel">Psychanalyse (01 %)</div>
-            <div class="percentage">---- %</div>
-            <div class="competenceBlock">
-              <div class="competenceSquare"></div>
-              <div class="competenceSquare"></div>
-            </div>
-          </div>
-          <div class="competence">
-            <div class="round"></div>
-            <div class="competenceLabel">Psychologie (10 %)</div>
-            <div class="percentage">---- %</div>
-            <div class="competenceBlock">
-              <div class="competenceSquare"></div>
-              <div class="competenceSquare"></div>
-            </div>
-          </div>
-          <div class="competence">
-            <div class="round"></div>
-            <div class="competenceLabel">Sauter (20 %)</div>
-            <div class="percentage">---- %</div>
-            <div class="competenceBlock">
-              <div class="competenceSquare"></div>
-              <div class="competenceSquare"></div>
-            </div>
-          </div>
-          <div class="competence">
-            <div class="round"></div>
-            <div class="competenceLabel">Sciences (01 %)</div>
-            <div class="percentage">---- %</div>
-            <div class="competenceBlock">
-              <div class="competenceSquare"></div>
-              <div class="competenceSquare"></div>
-            </div>
-          </div>
-          <div class="competence">
-            <div class="round"></div>
-            <div class="competenceLabel">...</div>
-            <div class="percentage">---- %</div>
-            <div class="competenceBlock">
-              <div class="competenceSquare"></div>
-              <div class="competenceSquare"></div>
-            </div>
-          </div>
-          <div class="competence">
-            <div class="round"></div>
-            <div class="competenceLabel">...</div>
-            <div class="percentage">---- %</div>
-            <div class="competenceBlock">
-              <div class="competenceSquare"></div>
-              <div class="competenceSquare"></div>
-            </div>
-          </div>
-          <div class="competence">
-            <div class="round"></div>
-            <div class="competenceLabel">...</div>
-            <div class="percentage">---- %</div>
-            <div class="competenceBlock">
-              <div class="competenceSquare"></div>
-              <div class="competenceSquare"></div>
-            </div>
-          </div>
-          <div class="competence">
-            <div class="round"></div>
-            <div class="competenceLabel">Survie (10 %)</div>
-            <div class="percentage">---- %</div>
-            <div class="competenceBlock">
-              <div class="competenceSquare"></div>
-              <div class="competenceSquare"></div>
-            </div>
-          </div>
-          <div class="competence">
-            <div class="round"></div>
-            <div class="competenceLabel">...</div>
-            <div class="percentage">---- %</div>
-            <div class="competenceBlock">
-              <div class="competenceSquare"></div>
-              <div class="competenceSquare"></div>
-            </div>
-          </div>
-          <div class="competence">
-            <div class="round"></div>
-            <div class="competenceLabel">Trouver Objet Caché (25 %)</div>
-            <div class="percentage">---- %</div>
-            <div class="competenceBlock">
-              <div class="competenceSquare"></div>
-              <div class="competenceSquare"></div>
-            </div>
-          </div>
-          <div class="competence">
-            <div class="round"></div>
-            <div class="competenceLabel">...</div>
-            <div class="percentage">---- %</div>
-            <div class="competenceBlock">
-              <div class="competenceSquare"></div>
-              <div class="competenceSquare"></div>
-            </div>
-          </div>
-          <div class="competence">
-            <div class="round"></div>
-            <div class="competenceLabel">...</div>
-            <div class="percentage">---- %</div>
-            <div class="competenceBlock">
-              <div class="competenceSquare"></div>
-              <div class="competenceSquare"></div>
-            </div>
-          </div>
-          <div class="competence">
-            <div class="round"></div>
-            <div class="competenceLabel">...</div>
-            <div class="percentage">---- %</div>
-            <div class="competenceBlock">
-              <div class="competenceSquare"></div>
-              <div class="competenceSquare"></div>
-            </div>
-          </div>
-          <div class="competence">
-            <div class="round"></div>
-            <div class="competenceLabel">...</div>
-            <div class="percentage">---- %</div>
-            <div class="competenceBlock">
-              <div class="competenceSquare"></div>
-              <div class="competenceSquare"></div>
-            </div>
-          </div>
-          <div class="competence">
-            <div class="round"></div>
-            <div class="competenceLabel">...</div>
-            <div class="percentage">---- %</div>
-            <div class="competenceBlock">
-              <div class="competenceSquare"></div>
-              <div class="competenceSquare"></div>
-            </div>
-          </div>
+          <Competence label="Orientation (10 %)" />
+          <Competence label="Persuasion (10 %)" />
+          <Competence label="Pickpocket (10 %)" />
+          <Competence label="Pilotage (01 %)" />
+          <Competence label="..." />
+          <Competence label="Pister (10 %)" />
+          <Competence label="Plongée (01 %)" />
+          <Competence label="Premiers soins (30 %)" />
+          <Competence label="Psychanalyse (01 %)" />
+          <Competence label="Psychologie (10 %)" />
+          <Competence label="Sauter (20 %)" />
+          <Competence label="Sciences (01 %)" />
+          <Competence label="..." />
+          <Competence label="..." />
+          <Competence label="..." />
+          <Competence label="Survie (10 %)" />
+          <Competence label="..." />
+          <Competence label="Trouver Objet Caché (25 %)" />
+          <Competence label="..." />
+          <Competence label="..." />
+          <Competence label="..." />
+          <Competence label="..." />
+          <Competence label="..." />
         </div>
       </div>
     </div>
@@ -1138,8 +203,23 @@
 </template>
 
 <script>
+import Caracteristique from './Caracteristique.vue';
+import Competence from './Competence.vue';
+
 export default {
-  name: "MainPage"
+    name: "MainPage",
+    components: {
+        Caracteristique,
+        Competence
+    },
+    filters: {
+        formatNumber: (value) => {
+            if (value < 10) {
+                return '0' + value;
+            }
+            return value;
+        }
+    }
 };
 </script>
 
@@ -1210,61 +290,6 @@ export default {
     flex-direction: column;
   }
 
-  .caracteristique {
-    display: flex;
-    align-items: center;
-    flex-wrap: nowrap;
-    width: 150px;
-    margin: 5px 0 5px 0;
-  }
-
-  .caracLabel {
-    width: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .caracBlockContainer {
-    width: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .caracBlock {
-    background-color: aliceblue;
-    width: 60px;
-    height: 40px;
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    grid-template-rows: auto;
-    grid-template-areas:
-            "bigCaracBlock upperCaracBlock"
-            "bigCaracBlock underCaracBlock";
-  }
-
-  .bigCaracBlock {
-    grid-area: bigCaracBlock;
-  }
-
-  .upperCaracBlock {
-    grid-area: upperCaracBlock;
-  }
-
-  .underCaracBlock {
-    grid-area: underCaracBlock;
-  }
-
-  .caracBlockItem {
-    align-self: stretch;
-    justify-self: stretch;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: thin solid black;
-  }
-
   #header {
     min-width: 30%;
     display: flex;
@@ -1288,9 +313,6 @@ export default {
     height: 200px;
     background-color: red;
   }
-
-
-
 
   /**
       SECOND BLOCK
@@ -1358,34 +380,5 @@ export default {
 
   .competencesColumn {
     flex-grow: 1;
-  }
-
-  .competence {
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    align-items: center;
-  }
-
-  .round {
-    width: 10px;
-    height: 10px;
-    border: thin solid black;
-    border-radius: 50%;
-  }
-
-  .competenceLabel {
-    flex-grow: 1;
-  }
-
-  .competenceBlock {
-    display: flex;
-    flex-wrap: nowrap;
-  }
-
-  .competenceSquare {
-    border: thin solid black;
-    width: 15px;
-    height: 20px;
   }
 </style>
