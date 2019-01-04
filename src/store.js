@@ -8,39 +8,48 @@ export default new Vuex.Store({
     caracteristiques: {
       force: {
         label: "Force",
-        shortLabel: "FOR"
+        shortLabel: "FOR",
+        value: 0
       },
       dexterite: {
         label: "Dexterité",
-        shortLabel: "DEX"
+        shortLabel: "DEX",
+        value: 0
       },
       pouvoir: {
         label: "Pouvoir",
-        shortLabel: "POU"
+        shortLabel: "POU",
+        value: 0
       },
       constitution: {
         label: "Constitution",
-        shortLabel: "CON"
+        shortLabel: "CON",
+        value: 0
       },
       apparence: {
         label: "Apparence",
-        shortLabel: "APP"
+        shortLabel: "APP",
+        value: 0
       },
       education: {
         label: "Education",
-        shortLabel: "EDU"
+        shortLabel: "EDU",
+        value: 0
       },
       taille: {
         label: "Taille",
-        shortLabel: "TAI"
+        shortLabel: "TAI",
+        value: 0
       },
       intelligence: {
         label: "Intelligence",
-        shortLabel: "INT"
+        shortLabel: "INT",
+        value: 0
       },
       mouvement: {
         label: "Mouvement",
-        shortLabel: "MVT"
+        shortLabel: "MVT",
+        value: 0
       }
     },
     competences: [
@@ -391,6 +400,13 @@ export default new Vuex.Store({
       }
     ]
   },
-  mutations: {},
+  mutations: {
+    randomizeCaracteristiques(state) {
+      const caracList = Object.keys(state.caracteristiques);
+      caracList.forEach(c => {
+        state.caracteristiques[c].value = 1 + Math.floor(Math.random() * Math.floor(6));
+      });
+    }
+  },
   actions: {}
 });

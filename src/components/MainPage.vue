@@ -1,5 +1,8 @@
 <template>
   <div class="body">
+    <div>
+      <button v-on:click="randomCarac()">Caractéristiques aléatoires</button>
+    </div>
     <div id="firstBlock" style="background-color: grey">
       <div id="etatCivil">
         <div class="title">
@@ -178,6 +181,11 @@ export default {
     },
     thirdColumnCompetences() {
       return this.$store.state.competences.filter(c => c.columnNb === 3);
+    }
+  },
+  methods: {
+    randomCarac() {
+      this.$store.commit('randomizeCaracteristiques');
     }
   }
 };

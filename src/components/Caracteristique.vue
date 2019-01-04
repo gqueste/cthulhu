@@ -6,13 +6,13 @@
         <div class="caracBlockContainer">
             <div class="caracBlock">
                 <div class="bigCaracBlock caracBlockItem">
-                    1
+                    <input type="number" v-model="caracteristique.value" readonly />
                 </div>
                 <div class="upperCaracBlock caracBlockItem">
-                    2
+                    <input type="number" value="2" readonly />
                 </div>
                 <div class="underCaracBlock caracBlockItem">
-                    3
+                    <input type="number" value="3" readonly />
                 </div>
             </div>
         </div>
@@ -83,5 +83,25 @@ export default {
   align-items: center;
   justify-content: center;
   border: thin solid black;
+}
+
+input {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  outline: none;
+  border: none;
+  text-align: center;
+}
+
+input[type="number"] {
+  appearance: textfield;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]:hover::-webkit-inner-spin-button,
+input[type="number"]:hover::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 </style>
