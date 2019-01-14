@@ -1,7 +1,18 @@
 import Vue from "vue";
 import Vuex from "vuex";
+import Utils from "./Utils";
 
 Vue.use(Vuex);
+
+const randomizeCaracteristique = function(carac) {
+  let value = 0;
+  for (let i = 0; i < carac.baseNbD6; i++) {
+    value += Utils.random(1, 6);
+  }
+  value += carac.bonus;
+  value = value * 5;
+  carac.value = value;
+};
 
 export default new Vuex.Store({
   state: {
@@ -9,46 +20,64 @@ export default new Vuex.Store({
       force: {
         label: "Force",
         shortLabel: "FOR",
+        baseNbD6: 3,
+        bonus: 0,
         value: 0
       },
       dexterite: {
         label: "Dexterité",
         shortLabel: "DEX",
+        baseNbD6: 3,
+        bonus: 0,
         value: 0
       },
       pouvoir: {
         label: "Pouvoir",
         shortLabel: "POU",
+        baseNbD6: 3,
+        bonus: 0,
         value: 0
       },
       constitution: {
         label: "Constitution",
         shortLabel: "CON",
+        baseNbD6: 3,
+        bonus: 0,
         value: 0
       },
       apparence: {
         label: "Apparence",
         shortLabel: "APP",
+        baseNbD6: 3,
+        bonus: 0,
         value: 0
       },
       education: {
         label: "Education",
         shortLabel: "EDU",
+        baseNbD6: 2,
+        bonus: 6,
         value: 0
       },
       taille: {
         label: "Taille",
         shortLabel: "TAI",
+        baseNbD6: 2,
+        bonus: 6,
         value: 0
       },
       intelligence: {
         label: "Intelligence",
         shortLabel: "INT",
+        baseNbD6: 2,
+        bonus: 6,
         value: 0
       },
       mouvement: {
         label: "Mouvement",
         shortLabel: "MVT",
+        baseNbD6: 3,
+        bonus: 0,
         value: 0
       }
     },
@@ -402,10 +431,9 @@ export default new Vuex.Store({
   },
   mutations: {
     randomizeCaracteristiques(state) {
-      const caracList = Object.keys(state.caracteristiques);
-      caracList.forEach(c => {
-        state.caracteristiques[c].value = 1 + Math.floor(Math.random() * Math.floor(6));
-      });
+      Object.keys(state.caracteristiques).forEach(c =>
+        randomizeCaracteristique(state.caracteristiques[c])
+      );
     }
   },
   actions: {}
