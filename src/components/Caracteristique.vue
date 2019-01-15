@@ -9,10 +9,10 @@
                     <input type="number" v-model="caracteristique.value" readonly />
                 </div>
                 <div class="upperCaracBlock caracBlockItem">
-                    <input type="number" value="2" readonly />
+                    <input type="number" value="2" v-model="half" readonly />
                 </div>
                 <div class="underCaracBlock caracBlockItem">
-                    <input type="number" value="3" readonly />
+                    <input type="number" value="3" v-model="fifth" readonly />
                 </div>
             </div>
         </div>
@@ -24,6 +24,14 @@ export default {
   name: "Caracteristique",
   props: {
     caracteristique: Object
+  },
+  computed: {
+    half() {
+      return Math.floor(this.caracteristique.value / 2);
+    },
+    fifth() {
+      return Math.floor(this.caracteristique.value / 5);
+    }
   }
 };
 </script>
